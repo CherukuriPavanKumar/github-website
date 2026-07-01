@@ -1,5 +1,5 @@
-import { PrismaHero } from "@/components/ui/prisma-hero";
+import Component from "@/components/ui/bento-grid-01";
 
 export default function DemoOne() {
-  return <PrismaHero />;
+  return <Component />;
 }
