@@ -83,7 +83,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Krishna Srinivas Madhira",
     role: "Technical Expert",
-    image: "/krishna.png",
+    image: "/krishna.webp",
     objectPosition: "top",
     domain: "Technical",
     favoriteTech: "TypeScript",
