@@ -175,6 +175,7 @@ const WhoWeAre = () => {
 
   return (
     <section
+      id="about"
       ref={sectionRef}
       className="relative overflow-hidden bg-black px-5 py-24 sm:px-8 md:px-12 md:py-36 lg:py-44"
     >

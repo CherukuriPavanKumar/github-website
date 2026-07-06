@@ -51,7 +51,7 @@ const domains = [
 
 export const DomainsSection = () => {
   return (
-    <section className="bg-black py-24 md:py-32">
+    <section id="domains" className="bg-black py-24 md:py-32">
       {/* Section label */}
       <div className="mx-auto max-w-6xl px-5 sm:px-8 md:px-12">
         <p className="mb-8 font-mono text-xs font-medium uppercase tracking-[0.3em] text-white/25">

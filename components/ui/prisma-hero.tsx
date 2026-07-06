@@ -83,7 +83,15 @@ export const WordsPullUpMultiStyle = ({ segments, className = "", style }: Words
 };
 
 /* ---------------- Hero ---------------- */
-const navItems = ["Our story", "Collective", "Workshops", "Programs", "Inquiries"];
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Domains", href: "#domains" },
+  { label: "Events", href: "#events" },
+  { label: "Projects", href: "#projects" },
+  { label: "Builders", href: "#builders" },
+  { label: "Join Us", href: "#join" },
+  { label: "FAQ", href: "#faq" },
+];
 
 const PrismaHero = () => {
   return (
@@ -111,14 +119,14 @@ const PrismaHero = () => {
           <div className="flex items-center gap-3 rounded-b-2xl bg-black px-4 py-2 sm:gap-6 md:gap-12 md:rounded-b-3xl md:px-8 lg:gap-14">
             {navItems.map((item) => (
               <a
-                key={item}
-                href="#"
+                key={item.label}
+                href={item.href}
                 className="text-[10px] transition-colors sm:text-xs md:text-sm"
                 style={{ color: "rgba(225, 224, 204, 0.8)" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#E1E0CC")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(225, 224, 204, 0.8)")}
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </div>
