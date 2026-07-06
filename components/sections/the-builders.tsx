@@ -11,7 +11,7 @@ export const TheBuilders = () => {
       <div className="mx-auto w-full max-w-6xl">
         
         {/* Header */}
-        <div className="mb-16 md:mb-24">
+        <div className="mb-4 md:mb-4">
           <motion.p
             className="mb-6 font-mono text-xs font-medium uppercase tracking-[0.3em] text-white/25"
             initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export const TheBuilders = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="border-t border-white/5 pt-16 md:pt-20"
+          className="border-t border-white/5 pt-16 md:pt-16"
         >
           <CircularTestimonials members={teamMembers} autoplay={true} />
         </motion.div>

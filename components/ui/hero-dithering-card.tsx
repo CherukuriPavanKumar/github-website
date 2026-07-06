@@ -34,7 +34,7 @@ export function CTASection() {
 
           <div className="relative z-10 px-6 max-w-4xl mx-auto text-center flex flex-col items-center">
             
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
+            <div className="mb-2 inline-flex items-center gap-2 rounded-full border mt-5 border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
@@ -52,7 +52,7 @@ export function CTASection() {
             </h2>
             
             {/* Description */}
-            <p className="text-white/50 text-lg md:text-xl max-w-2xl mb-16 leading-relaxed">
+            <p className="text-white/50 text-lg md:text-xl max-w-2xl mb-8 leading-relaxed">
               Whether you're writing your first line of code<br />
               or shipping your hundredth project,<br />
               <br />
@@ -60,7 +60,7 @@ export function CTASection() {
             </p>
 
             {/* Button */}
-            <button className="group relative inline-flex h-16 items-center justify-center gap-3 overflow-hidden rounded-full bg-white px-14 text-lg font-medium text-black transition-all duration-300 hover:bg-white/90 hover:scale-105 active:scale-95 hover:ring-4 hover:ring-white/20">
+            <button className="group relative mb-5 inline-flex h-16 items-center justify-center gap-3 overflow-hidden rounded-full bg-white px-14 text-lg font-medium text-black transition-all duration-300 hover:bg-white/90 hover:scale-105 active:scale-95 hover:ring-4 hover:ring-white/20">
               <span className="relative z-10">Join the Community</span>
               <ArrowRight className="h-5 w-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
             </button>

@@ -113,24 +113,28 @@ const PrismaHero = () => {
 
         {/* Gradient overlay — stronger at the bottom for text readability */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/80" />
-
-        {/* Navbar */}
+        
+        {/*Navbar */}
         <nav className="absolute left-1/2 top-0 z-20 -translate-x-1/2">
-          <div className="flex items-center gap-3 rounded-b-2xl bg-black px-4 py-2 sm:gap-6 md:gap-12 md:rounded-b-3xl md:px-8 lg:gap-14">
-            {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-[10px] transition-colors sm:text-xs md:text-sm"
-                style={{ color: "rgba(225, 224, 204, 0.8)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#E1E0CC")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(225, 224, 204, 0.8)")}
-              >
-                {item.label}
-              </a>
-            ))}
+          <div className="flex items-center rounded-b-3xl bg-black px-8 py-3">
+            <div className="flex items-center gap-4 md:gap-6 lg:gap-8 xl:gap-10">
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-xs md:text-sm transition-colors whitespace-nowrap"
+                  style={{ color: "rgba(225,224,204,0.8)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#E1E0CC")}
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "rgba(225,224,204,0.8)")
+                  }
+                > 
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
-        </nav>
+</nav>
 
         {/* Hero content */}
         <div className="absolute bottom-0 left-0 right-0 px-5 pb-6 sm:px-8 md:px-12 md:pb-10">
