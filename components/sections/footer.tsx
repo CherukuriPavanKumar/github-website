@@ -79,7 +79,7 @@ export const Footer = () => {
         <div className="h-px w-full max-w-5xl mx-auto bg-white/20 mb-6" />
 
         {/* Navigation */}
-        <nav className="flex flex-wrap justify-center gap-x-12 gap-y-4 mb-6 text-[22px] font-medium text-white/90">
+        <nav className="flex flex-wrap justify-center gap-x-12 gap-y-4 mb-6 text-[18px] font-medium text-white/90">
           {navLinks.map((link) => (
             <a key={link.label} href={link.href} className="hover:text-white transition-colors">
               {link.label}
