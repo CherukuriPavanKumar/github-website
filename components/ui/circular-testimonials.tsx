@@ -7,7 +7,7 @@ import React, {
   useCallback,
 } from "react";
 import { ArrowLeft, ArrowRight, Briefcase, GitBranch, Mail, Phone } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { TeamMember } from "@/lib/data/team";
 
 interface CircularBuildersProps {
@@ -144,13 +144,13 @@ export const CircularTestimonials = ({
   }
 
   // Framer Motion variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0, transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
     exit: { opacity: 0, y: -20 },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     initial: { opacity: 0, y: 10 },
     animate: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } },
   };

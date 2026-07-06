@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Project } from "@/lib/data/projects";
 import { ArrowRight, GitBranch, ExternalLink, ArrowUpRight } from "lucide-react";
 
@@ -12,7 +12,7 @@ interface ProjectCardProps {
   onClick: () => void;
 }
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 8 },
   visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } },
 };
