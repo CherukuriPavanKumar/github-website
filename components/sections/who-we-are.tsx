@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 /* ——————————— Scroll-revealed element ——————————— */
 interface RevealProps {
@@ -125,30 +124,7 @@ const DiffBlock = () => (
   </motion.div>
 );
 
-/* ——————————— Animated gradient orb ——————————— */
-const GlowOrb = () => (
-  <div className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2">
-    <div className="relative h-[500px] w-[700px] md:h-[600px] md:w-[900px]">
-      <div
-        className="absolute inset-0 animate-pulse rounded-full opacity-[0.12] blur-[120px]"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, #58a6ff 0%, #1f6feb 30%, transparent 70%)",
-          animationDuration: "4s",
-        }}
-      />
-      <div
-        className="absolute inset-0 translate-x-20 animate-pulse rounded-full opacity-[0.06] blur-[100px]"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, #a371f7 0%, #8b5cf6 40%, transparent 70%)",
-          animationDuration: "6s",
-          animationDelay: "1s",
-        }}
-      />
-    </div>
-  </div>
-);
+
 
 /* ——————————— Dot grid background ——————————— */
 const DotGrid = () => (
@@ -164,26 +140,14 @@ const DotGrid = () => (
 
 /* ——————————— Main section ——————————— */
 const WhoWeAre = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const orbY = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
     <section
       id="about"
-      ref={sectionRef}
       className="relative overflow-hidden bg-black px-5 py-24 sm:px-8 md:px-12 md:py-36 lg:py-44"
     >
       {/* Visual layers */}
       <DotGrid />
-      <motion.div style={{ y: orbY }} className="absolute inset-0">
-        <GlowOrb />
-      </motion.div>
 
       {/* Subtle top border */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
