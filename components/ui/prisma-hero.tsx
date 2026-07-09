@@ -162,6 +162,7 @@ const PrismaHero = () => {
               A premier collective of open-source contributors, builders, and designers at GITAM — unlocking potential through collaboration and code.
             </motion.p>
 
+            <a href="#join">
             <motion.button
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -173,6 +174,7 @@ const PrismaHero = () => {
                 <ArrowRight className="h-4 w-4" style={{ color: "#E1E0CC" }} />
               </span>
             </motion.button>
+            </a>
           </div>
         </div>
       </div>

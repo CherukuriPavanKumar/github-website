@@ -57,7 +57,7 @@ const socials = [
 /* ——————————— Footer ——————————— */
 export const Footer = () => {
   return (
-    <footer className="w-full bg-[#010409] text-white pt-12 pb-6 font-sans overflow-hidden">
+    <footer className="w-full bg-black text-white pt-12 pb-6 font-sans overflow-hidden border-t border-white/10">
       <div className="mx-auto max-w-7xl px-6">
         
         {/* Logo Lockup */}
