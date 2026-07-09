@@ -3,9 +3,10 @@ export interface TeamMember {
   role: string;
   image: string;
   objectPosition?: string;
-  domain?: string;
-  favoriteTech?: string;
-  focus?: string;
+  domain: string;
+  bio: string;
+  year: string;
+  expertise: string[];
   links: {
     linkedin?: string;
     github?: string;
@@ -20,8 +21,9 @@ export const teamMembers: TeamMember[] = [
     role: "President",
     image: "/chakri.jpg",
     domain: "Leadership",
-    favoriteTech: "Python",
-    focus: "Community",
+    bio: "Leading the community vision and orchestrating technical initiatives at scale.",
+    year: "4th Year",
+    expertise: ["Community Building", "Strategic Planning", "System Architecture"],
     links: {
       linkedin: "#",
       github: "#",
@@ -33,8 +35,9 @@ export const teamMembers: TeamMember[] = [
     role: "Vice President",
     image: "/mahesh.webp",
     domain: "Management",
-    favoriteTech: "React",
-    focus: "Hackathons",
+    bio: "Bridging the gap between product strategy and engineering execution. Hackathon enthusiast.",
+    year: "4th Year",
+    expertise: ["Product Management", "Hackathons", "Frontend Dev"],
     links: {
       linkedin: "#",
       github: "#",
@@ -46,8 +49,9 @@ export const teamMembers: TeamMember[] = [
     role: "Secretary",
     image: "/kasturi.jpg",
     domain: "Operations",
-    favoriteTech: "Figma",
-    focus: "Events",
+    bio: "Designing user-centric experiences and streamlining organizational operations.",
+    year: "3rd Year",
+    expertise: ["UI/UX Design", "Operations", "Event Coordination"],
     links: {
       linkedin: "#",
       github: "#",
@@ -59,8 +63,9 @@ export const teamMembers: TeamMember[] = [
     role: "Joint Secretary",
     image: "/meghana.jpg",
     domain: "Coordination",
-    favoriteTech: "Java",
-    focus: "Workshops",
+    bio: "Architecting backend systems and driving technical workshops for the community.",
+    year: "3rd Year",
+    expertise: ["Backend Dev", "Technical Mentorship", "Workshops"],
     links: {
       linkedin: "#",
       github: "#",
@@ -72,8 +77,9 @@ export const teamMembers: TeamMember[] = [
     role: "Head of Operations",
     image: "/raja.jpeg",
     domain: "Operations",
-    favoriteTech: "C++",
-    focus: "Logistics",
+    bio: "Optimizing community logistics and building high-performance operational pipelines.",
+    year: "3rd Year",
+    expertise: ["Logistics", "Operations", "Pipeline Optimization"],
     links: {
       linkedin: "#",
       github: "#",
@@ -86,8 +92,9 @@ export const teamMembers: TeamMember[] = [
     image: "/krishna.webp",
     objectPosition: "top",
     domain: "Technical",
-    favoriteTech: "TypeScript",
-    focus: "Open Source",
+    bio: "Building open-source tools, obsessing over DX, and scaling web infrastructure.",
+    year: "4th Year",
+    expertise: ["Full Stack Dev", "Open Source", "Developer Experience"],
     links: {
       linkedin: "#",
       github: "#",

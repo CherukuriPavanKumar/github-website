@@ -169,7 +169,7 @@ const WhoWeAre = () => {
           </Reveal>
           <Reveal delay={0.2}>
             <h2 className="text-[clamp(2.2rem,6vw,5rem)] font-medium leading-[1.05] tracking-[-0.04em] text-white">
-              We build builders.
+              We build Impact.
             </h2>
           </Reveal>
         </div>

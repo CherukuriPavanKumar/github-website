@@ -199,18 +199,34 @@ export const CircularTestimonials = ({
                 {activeMember.role}
               </motion.p>
               
-              <motion.div variants={itemVariants} className="mt-8 flex flex-col gap-4">
+              <motion.p
+                variants={itemVariants}
+                className="mt-6 text-sm text-white/60 leading-relaxed max-w-sm"
+              >
+                {activeMember.bio}
+              </motion.p>
+              
+              <motion.div variants={itemVariants} className="mt-8 grid grid-cols-2 gap-y-6 gap-x-8 max-w-sm">
                 <div className="flex flex-col gap-1">
-                  <span className="font-mono text-xs text-white/30 uppercase tracking-widest">Domain</span>
-                  <span className="text-lg" style={{ color: colorDetail }}>{activeMember.domain}</span>
+                  <span className="font-mono text-[10px] text-white/30 uppercase tracking-widest">Domain</span>
+                  <span className="text-base" style={{ color: colorDetail }}>{activeMember.domain}</span>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <span className="font-mono text-xs text-white/30 uppercase tracking-widest">Favorite Tech</span>
-                  <span className="text-lg" style={{ color: colorDetail }}>{activeMember.favoriteTech}</span>
+                  <span className="font-mono text-[10px] text-white/30 uppercase tracking-widest">Year of Study</span>
+                  <span className="text-base font-mono" style={{ color: colorDetail }}>
+                    {activeMember.year}
+                  </span>
                 </div>
-                <div className="flex flex-col gap-1">
-                  <span className="font-mono text-xs text-white/30 uppercase tracking-widest">Current Focus</span>
-                  <span className="text-lg" style={{ color: colorDetail }}>{activeMember.focus}</span>
+                
+                <div className="col-span-2 flex flex-col gap-2">
+                  <span className="font-mono text-[10px] text-white/30 uppercase tracking-widest">Core Expertise</span>
+                  <div className="flex flex-wrap gap-2">
+                    {activeMember.expertise.map(skill => (
+                      <span key={skill} className="px-2.5 py-1.5 rounded bg-white/5 border border-white/10 text-xs font-mono text-white/70">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
 
