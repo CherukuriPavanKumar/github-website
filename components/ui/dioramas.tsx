@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 /* ═══════════════════════════════════════════════════
-   AI & MACHINE LEARNING
+   AGENTIC DEVELOPMENT
    Multi-layer neural network with animated data flow
    ═══════════════════════════════════════════════════ */
 export const AIDiorama = () => {
@@ -103,7 +103,7 @@ export const AIDiorama = () => {
         )}
 
         {/* Layer labels */}
-        {["Input Layer", "Hidden Layer 1", "Hidden Layer 2", "Output"].map((label, i) => (
+        {["Perceive", "Reason", "Plan", "Act"].map((label, i) => (
           <text
             key={label + i}
             x={layers[i].x}
@@ -124,7 +124,7 @@ export const AIDiorama = () => {
 };
 
 /* ═══════════════════════════════════════════════════
-   WEB DEVELOPMENT
+   WEB ENGINEERING
    Code editor with line numbers + live preview pane
    ═══════════════════════════════════════════════════ */
 const codeLines = [
@@ -192,7 +192,7 @@ export const WebDevDiorama = () => (
 );
 
 /* ═══════════════════════════════════════════════════
-   CYBERSECURITY
+   DIGITAL DEFENCE
    Terminal with title bar, colored scan output
    ═══════════════════════════════════════════════════ */
 const termLines = [
@@ -256,199 +256,195 @@ export const CyberDiorama = () => (
 );
 
 /* ═══════════════════════════════════════════════════
-   DATA SCIENCE
-   Dashboard with SVG line chart + metric cards
+   OPEN SOURCE / DEVELOPER EXPERIENCE
+   GitHub-style contribution + PR activity view
    ═══════════════════════════════════════════════════ */
-const chartPath = "M 20 140 Q 60 120, 100 100 T 180 80 T 260 50 T 340 70 T 420 30";
-const metrics = [
-  { label: "Accuracy", value: "94.7%", delta: "+2.3%" },
-  { label: "F1 Score", value: "0.931", delta: "+0.04" },
-  { label: "Samples", value: "12.4K", delta: "" },
+const prItems = [
+  { title: "feat: add streaming support to CLI", status: "merged", label: "enhancement", time: "2h ago" },
+  { title: "fix: resolve race condition in worker pool", status: "merged", label: "bug", time: "5h ago" },
+  { title: "docs: update README with new API examples", status: "open", label: "documentation", time: "8h ago" },
+  { title: "refactor: migrate config parser to TOML", status: "open", label: "enhancement", time: "1d ago" },
+  { title: "ci: add automated release workflow", status: "merged", label: "ci/cd", time: "2d ago" },
 ];
 
-export const DataScienceDiorama = () => (
+const statusColors: Record<string, { bg: string; text: string; dot: string }> = {
+  merged: { bg: "bg-purple-500/10", text: "text-purple-400", dot: "bg-purple-400" },
+  open: { bg: "bg-green-500/10", text: "text-green-400", dot: "bg-green-400" },
+};
+
+const labelColors: Record<string, string> = {
+  enhancement: "border-blue-500/30 text-blue-400/70",
+  bug: "border-red-500/30 text-red-400/70",
+  documentation: "border-yellow-500/30 text-yellow-400/70",
+  "ci/cd": "border-cyan-500/30 text-cyan-400/70",
+};
+
+export const OpenSourceDiorama = () => (
   <div className="flex h-full w-full flex-col overflow-hidden bg-[#0d1117]">
-    {/* Dashboard header */}
+    {/* Repo header */}
     <div className="flex items-center justify-between border-b border-white/[0.06] bg-[#161b22] px-4 py-2.5">
-      <span className="font-mono text-[11px] text-white/40">model_evaluation.ipynb</span>
-      <div className="flex items-center gap-1.5">
-        <div className="h-1.5 w-1.5 rounded-full bg-green-400" />
-        <span className="font-mono text-[10px] text-white/25">Kernel ready</span>
-      </div>
-    </div>
-
-    <div className="flex flex-1 flex-col gap-4 p-5">
-      {/* Metric cards */}
-      <div className="flex gap-3">
-        {metrics.map((m) => (
-          <div key={m.label} className="flex-1 rounded-lg border border-white/[0.06] bg-white/[0.02] p-3">
-            <p className="font-mono text-[10px] text-white/30">{m.label}</p>
-            <p className="mt-1 font-mono text-lg font-medium text-white/80">{m.value}</p>
-            {m.delta && (
-              <p className="mt-0.5 font-mono text-[10px] text-green-400/70">{m.delta}</p>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Line chart */}
-      <div className="flex-1 rounded-lg border border-white/[0.06] bg-white/[0.015] p-4">
-        <p className="mb-3 font-mono text-[10px] text-white/25">Loss over epochs</p>
-        <svg viewBox="0 0 440 160" className="h-full w-full" fill="none">
-          {/* Grid lines */}
-          {[40, 80, 120].map((y) => (
-            <line key={y} x1="20" y1={y} x2="420" y2={y} stroke="white" strokeOpacity={0.04} />
-          ))}
-          {/* Chart line */}
-          <motion.path
-            d={chartPath}
-            stroke="#58a6ff"
-            strokeWidth={2}
-            strokeLinecap="round"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2.5, ease: "easeOut" }}
-          />
-          {/* Glow */}
-          <motion.path
-            d={chartPath}
-            stroke="#58a6ff"
-            strokeWidth={6}
-            strokeLinecap="round"
-            strokeOpacity={0.15}
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 2.5, ease: "easeOut" }}
-          />
+      <div className="flex items-center gap-2">
+        <svg viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5 text-white/40">
+          <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z" />
         </svg>
+        <span className="font-mono text-[11px] text-white/50">github-community/devtools</span>
       </div>
-    </div>
-  </div>
-);
-
-/* ═══════════════════════════════════════════════════
-   COMPETITIVE PROGRAMMING
-   Problem view + code editor with verdict
-   ═══════════════════════════════════════════════════ */
-export const CPDiorama = () => (
-  <div className="flex h-full w-full flex-col overflow-hidden bg-[#0d1117]">
-    {/* Top bar */}
-    <div className="flex items-center justify-between border-b border-white/[0.06] bg-[#161b22] px-4 py-2.5">
       <div className="flex items-center gap-3">
-        <span className="font-mono text-[11px] text-white/40">Problem 1847B</span>
-        <span className="rounded bg-yellow-500/15 px-1.5 py-0.5 font-mono text-[9px] text-yellow-400/80">
-          Medium
-        </span>
+        <span className="font-mono text-[10px] text-white/25">⭐ 342</span>
+        <span className="font-mono text-[10px] text-white/25">🍴 89</span>
       </div>
-      <motion.div
-        className="rounded bg-green-500/15 px-2 py-0.5 font-mono text-[10px] font-medium text-green-400"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 2, duration: 0.4 }}
-      >
-        ✓ Accepted — 46ms
-      </motion.div>
     </div>
 
-    {/* Code */}
-    <div className="flex-1 p-4 font-mono text-[11px] leading-[1.7] sm:text-xs">
-      {[
-        { n: 1, code: "#include <bits/stdc++.h>", cls: "text-[#c678dd]" },
-        { n: 2, code: "using namespace std;", cls: "text-[#c678dd]" },
-        { n: 3, code: "", cls: "" },
-        { n: 4, code: "void solve() {", cls: "text-[#abb2bf]" },
-        { n: 5, code: "    int n, k;", cls: "text-[#abb2bf]" },
-        { n: 6, code: "    cin >> n >> k;", cls: "text-[#abb2bf]" },
-        { n: 7, code: "    vector<int> a(n);", cls: "text-[#61afef]" },
-        { n: 8, code: "    for (auto& x : a) cin >> x;", cls: "text-[#abb2bf]" },
-        { n: 9, code: "    sort(a.begin(), a.end());", cls: "text-[#e5c07b]" },
-        { n: 10, code: '    cout << a[n-k] - a[0] << "\\n";', cls: "text-[#98c379]" },
-        { n: 11, code: "}", cls: "text-[#abb2bf]" },
-      ].map((line) => (
-        <div key={line.n} className="flex items-baseline gap-4">
-          <span className="w-5 select-none text-right text-white/15">{line.n}</span>
-          <span className={line.cls}>{line.code || "\u00A0"}</span>
-        </div>
-      ))}
+    {/* Pull Requests list */}
+    <div className="flex-1 overflow-hidden">
+      {prItems.map((pr, i) => {
+        const s = statusColors[pr.status];
+        return (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: i * 0.12 }}
+            className="flex items-center gap-3 border-b border-white/[0.04] px-4 py-3 transition-colors hover:bg-white/[0.02]"
+          >
+            <div className={`h-2 w-2 shrink-0 rounded-full ${s.dot}`} />
+            <div className="flex-1 min-w-0">
+              <p className="truncate font-mono text-[11px] text-white/60">{pr.title}</p>
+            </div>
+            <span className={`shrink-0 rounded-full border px-2 py-0.5 font-mono text-[9px] ${labelColors[pr.label] || "border-white/10 text-white/30"}`}>
+              {pr.label}
+            </span>
+            <span className={`shrink-0 rounded-full px-1.5 py-0.5 font-mono text-[9px] ${s.bg} ${s.text}`}>
+              {pr.status}
+            </span>
+            <span className="shrink-0 font-mono text-[9px] text-white/20">{pr.time}</span>
+          </motion.div>
+        );
+      })}
     </div>
 
-    {/* Test results footer */}
-    <div className="flex items-center gap-4 border-t border-white/[0.06] bg-[#161b22] px-4 py-2">
-      <span className="font-mono text-[10px] text-white/30">Tests: 47/47 passed</span>
-      <span className="font-mono text-[10px] text-white/20">Memory: 3.8 MB</span>
-      <span className="font-mono text-[10px] text-white/20">Time: 46 ms</span>
+    {/* Footer stats */}
+    <div className="flex items-center justify-between border-t border-white/[0.06] bg-[#161b22] px-4 py-2">
+      <span className="font-mono text-[10px] text-white/30">5 pull requests</span>
+      <div className="flex items-center gap-3">
+        <span className="font-mono text-[10px] text-green-400/60">+1,247</span>
+        <span className="font-mono text-[10px] text-red-400/60">−389</span>
+      </div>
     </div>
   </div>
 );
 
 /* ═══════════════════════════════════════════════════
-   UI/UX DESIGN
-   Design system specimen: type scale, colors, component
+   CREATIVE STUDIO
+   Video editing timeline & camera viewfinder
    ═══════════════════════════════════════════════════ */
-const typeScale = [
-  { size: "text-3xl", weight: "font-semibold", label: "Display", sample: "Aa" },
-  { size: "text-xl", weight: "font-medium", label: "Heading", sample: "Aa" },
-  { size: "text-base", weight: "font-normal", label: "Body", sample: "Aa" },
-  { size: "text-xs", weight: "font-normal", label: "Caption", sample: "Aa" },
-];
+export const CreativeStudioDiorama = () => (
+  <div className="flex h-full w-full flex-col overflow-hidden bg-[#0a0a0a]">
+    {/* Top: Viewfinder / Video Player */}
+    <div className="relative flex h-[55%] w-full flex-col bg-black">
+      {/* Rule of Thirds Grid */}
+      <div className="pointer-events-none absolute inset-0 grid grid-cols-3 grid-rows-3 opacity-20">
+        <div className="border-b border-r border-white/50" />
+        <div className="border-b border-r border-white/50" />
+        <div className="border-b border-white/50" />
+        <div className="border-b border-r border-white/50" />
+        <div className="border-b border-r border-white/50" />
+        <div className="border-b border-white/50" />
+        <div className="border-r border-white/50" />
+        <div className="border-r border-white/50" />
+        <div />
+      </div>
 
-const palette = ["#ffffff", "#a0a0a0", "#58a6ff", "#3fb950", "#f85149"];
+      {/* Recording Indicator */}
+      <div className="absolute left-4 top-4 flex items-center gap-2">
+        <motion.div
+          className="h-2.5 w-2.5 rounded-full bg-red-500"
+          animate={{ opacity: [1, 0.3, 1] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+        />
+        <span className="font-mono text-[10px] font-medium tracking-wider text-red-500">REC</span>
+      </div>
 
-export const UIDiorama = () => (
-  <div className="flex h-full w-full flex-col overflow-hidden bg-[#0d1117]">
-    {/* Figma-style top bar */}
-    <div className="flex items-center justify-between border-b border-white/[0.06] bg-[#161b22] px-4 py-2.5">
-      <span className="font-mono text-[11px] text-white/40">Design System — v2.4</span>
-      <div className="flex gap-1.5">
-        <div className="h-4 w-4 rounded bg-white/[0.06]" />
-        <div className="h-4 w-4 rounded bg-white/[0.06]" />
+      {/* Timecode */}
+      <div className="absolute right-4 top-4 font-mono text-[11px] tracking-wider text-white">
+        00:01:23:14
+      </div>
+
+      {/* Focus Box */}
+      <motion.div
+        className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 border border-white/40"
+        animate={{ scale: [1, 1.05, 1], opacity: [0.4, 0.7, 0.4] }}
+        transition={{ duration: 3, repeat: Infinity }}
+      >
+        <div className="absolute -left-1 -top-1 h-2 w-2 border-l-2 border-t-2 border-green-500" />
+        <div className="absolute -right-1 -top-1 h-2 w-2 border-r-2 border-t-2 border-green-500" />
+        <div className="absolute -bottom-1 -left-1 h-2 w-2 border-b-2 border-l-2 border-green-500" />
+        <div className="absolute -bottom-1 -right-1 h-2 w-2 border-b-2 border-r-2 border-green-500" />
+      </motion.div>
+
+      {/* Camera Settings Footer */}
+      <div className="absolute bottom-0 left-0 flex w-full justify-between bg-gradient-to-t from-black/80 to-transparent p-4 font-mono text-[9px] text-white/70">
+        <div className="flex gap-4">
+          <span>ISO 400</span>
+          <span>f/2.8</span>
+          <span>1/50s</span>
+        </div>
+        <div className="flex gap-4 text-white/50">
+          <span>4K</span>
+          <span>60FPS</span>
+          <span>S-LOG3</span>
+        </div>
       </div>
     </div>
 
-    <div className="flex flex-1 gap-5 p-5">
-      {/* Type scale */}
-      <div className="flex flex-1 flex-col gap-3">
-        <p className="font-mono text-[10px] uppercase tracking-widest text-white/20">Typography</p>
-        {typeScale.map((t) => (
-          <div key={t.label} className="flex items-baseline gap-3">
-            <span className={`${t.size} ${t.weight} text-white/70`}>{t.sample}</span>
-            <span className="font-mono text-[9px] text-white/20">{t.label}</span>
-          </div>
-        ))}
-
-        {/* Color palette */}
-        <div className="mt-4">
-          <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-white/20">Palette</p>
-          <div className="flex gap-2">
-            {palette.map((color) => (
-              <div key={color} className="flex flex-col items-center gap-1">
-                <div
-                  className="h-6 w-6 rounded-full border border-white/10"
-                  style={{ backgroundColor: color }}
-                />
-                <span className="font-mono text-[8px] text-white/15">{color.slice(1, 4)}</span>
-              </div>
-            ))}
-          </div>
+    {/* Bottom: Editing Timeline */}
+    <div className="flex h-[45%] w-full flex-col border-t border-white/10 bg-[#161616]">
+      {/* Timeline Header */}
+      <div className="flex h-6 items-center border-b border-white/5 px-2 text-[9px] text-white/30">
+        <div className="flex-1 overflow-hidden whitespace-nowrap">
+          {Array.from({ length: 20 }).map((_, i) => (
+            <span key={i} className="inline-block w-8 border-l border-white/10 pl-1">
+              00:0{i}
+            </span>
+          ))}
         </div>
       </div>
 
-      {/* Component preview */}
-      <div className="hidden w-[45%] flex-col gap-3 sm:flex">
-        <p className="font-mono text-[10px] uppercase tracking-widest text-white/20">Components</p>
-        <div className="flex flex-col gap-2.5">
-          <div className="h-8 w-full rounded-md bg-white/90 px-3 py-1.5 text-center font-mono text-[11px] font-medium text-black">
-            Primary Button
+      {/* Tracks Container */}
+      <div className="relative flex-1 p-2">
+        {/* Playhead */}
+        <motion.div
+          className="absolute bottom-0 top-0 z-10 w-px bg-red-500"
+          initial={{ left: "10%" }}
+          animate={{ left: "90%" }}
+          transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+        >
+          <div className="absolute -left-[3px] top-0 h-1.5 w-1.5 rotate-45 bg-red-500" />
+        </motion.div>
+
+        <div className="flex h-full flex-col gap-1.5">
+          {/* V2 Track (B-Roll) */}
+          <div className="relative flex h-1/3 w-full items-center rounded bg-black/40">
+            <div className="absolute left-[15%] w-[25%] h-full rounded-sm bg-blue-500/80 border border-blue-400/50" />
+            <div className="absolute left-[45%] w-[15%] h-full rounded-sm bg-blue-500/80 border border-blue-400/50" />
           </div>
-          <div className="h-8 w-full rounded-md border border-white/20 px-3 py-1.5 text-center font-mono text-[11px] text-white/60">
-            Secondary
+
+          {/* V1 Track (Main Cam) */}
+          <div className="relative flex h-1/3 w-full items-center rounded bg-black/40">
+            <div className="absolute left-[5%] w-[80%] h-full rounded-sm bg-indigo-500/80 border border-indigo-400/50 flex items-center overflow-hidden">
+              {/* Fake film strip texture */}
+              <div className="w-full h-px bg-black/20" />
+            </div>
           </div>
-          <div className="h-8 w-full rounded-md bg-white/[0.06] px-3 py-1.5 text-center font-mono text-[11px] text-white/40">
-            Ghost
-          </div>
-          <div className="mt-2 rounded-md border border-white/[0.06] bg-white/[0.02] p-2.5">
-            <div className="mb-1 font-mono text-[9px] text-white/20">Input</div>
-            <div className="h-7 rounded border border-white/10 bg-white/[0.03]" />
+
+          {/* A1 Track (Audio) */}
+          <div className="relative flex h-1/3 w-full items-center rounded bg-black/40">
+            <div className="absolute left-[5%] w-[80%] h-full rounded-sm bg-emerald-500/60 border border-emerald-400/30 flex items-center justify-between px-1">
+              {/* Fake waveform */}
+              {[20, 45, 80, 60, 30, 90, 100, 75, 40, 25, 50, 85, 70, 35, 20, 60, 95, 80, 55, 30, 100, 90, 65, 40, 20, 75, 85, 50, 30, 20].map((h, i) => (
+                <div key={i} className="w-[1px] bg-black/30" style={{ height: `${h}%` }} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

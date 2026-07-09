@@ -5,47 +5,40 @@ import {
   AIDiorama,
   WebDevDiorama,
   CyberDiorama,
-  DataScienceDiorama,
-  CPDiorama,
-  UIDiorama,
+  OpenSourceDiorama,
+  CreativeStudioDiorama,
 } from "@/components/ui/dioramas";
 
 const domains = [
   {
-    title: "AI & Machine Learning",
+    title: "Agentic Development",
     description:
-      "Train models, analyze patterns, and build the future. From neural networks to large language models, we explore the cutting edge of artificial intelligence.",
+      "Build autonomous systems that think, plan, and act. From LLM-powered agents to multi-step reasoning pipelines, we push the boundaries of what AI can do independently.",
     content: <AIDiorama />,
   },
   {
-    title: "Web Development",
+    title: "Web Engineering",
     description:
-      "Architect scalable applications. We focus on modern stacks, performance, and building products that can handle real users.",
+      "Architect production-grade systems. We go beyond templates — focusing on performance, scalability, and shipping real products with modern stacks.",
     content: <WebDevDiorama />,
   },
   {
-    title: "Cybersecurity",
+    title: "Digital Defence",
     description:
-      "Defend the digital world. Learn penetration testing, cryptography, and network security through hands-on CTFs and real-world scenarios.",
+      "Secure the systems we build. Learn offensive security, penetration testing, cryptography, and incident response through hands-on CTFs and real-world scenarios.",
     content: <CyberDiorama />,
   },
   {
-    title: "Data Science",
+    title: "Open Source / DevEx",
     description:
-      "Turn raw data into actionable insights. Master data visualization, statistical analysis, and big data technologies.",
-    content: <DataScienceDiorama />,
+      "Contribute to the tools developers use every day. We build CLIs, libraries, GitHub Actions, and developer tools — and ship them to the open-source ecosystem.",
+    content: <OpenSourceDiorama />,
   },
   {
-    title: "Competitive Programming",
+    title: "Creative Studio",
     description:
-      "Optimize everything. Master algorithms, data structures, and problem-solving to compete on a global scale.",
-    content: <CPDiorama />,
-  },
-  {
-    title: "UI/UX Design",
-    description:
-      "Craft beautiful, intuitive experiences. We bridge the gap between human psychology and digital interfaces.",
-    content: <UIDiorama />,
+      "The visual voice of the community. Content strategy, photography, graphic design, video production, and brand storytelling — where creativity meets craft.",
+    content: <CreativeStudioDiorama />,
   },
 ];
 
