@@ -51,10 +51,10 @@ export const StickyScroll = ({
         of the scroll through this section.
       */}
       <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden px-5 sm:px-8 md:px-12">
-        <div className="relative flex h-full w-full max-w-6xl items-center justify-between">
+        <div className="relative flex h-full w-full max-w-6xl flex-col items-center justify-center gap-8 md:flex-row md:justify-between md:gap-0 pt-16 md:pt-0">
           
-          {/* Left: Text Content */}
-          <div className="relative z-10 flex h-full w-full items-center justify-start md:w-[45%]">
+          {/* Left/Top: Text Content */}
+          <div className="relative z-10 flex h-[40%] w-full items-center justify-start md:h-full md:w-[45%]">
             {content.map((item, index) => {
               const isActive = activeCard === index;
               return (
@@ -69,13 +69,13 @@ export const StickyScroll = ({
                     transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
                   }}
                 >
-                  <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-white/30">
+                  <p className="mb-3 font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/30">
                     Domain {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h2 className="mb-6 text-[clamp(2.5rem,5vw,4.5rem)] font-medium leading-[1.05] tracking-[-0.04em] text-white">
+                  <h2 className="mb-4 md:mb-6 text-[clamp(2rem,5vw,4.5rem)] font-medium leading-[1.05] tracking-[-0.04em] text-white">
                     {item.title}
                   </h2>
-                  <p className="max-w-md text-base leading-relaxed text-white/50 sm:text-lg">
+                  <p className="max-w-md text-sm leading-relaxed text-white/50 sm:text-base md:text-lg">
                     {item.description}
                   </p>
                 </div>
@@ -83,14 +83,14 @@ export const StickyScroll = ({
             })}
           </div>
 
-          {/* Right: Visual Dioramas (Hidden on small mobile) */}
-          <div className="relative hidden h-full w-[50%] items-center justify-center md:flex">
+          {/* Right/Bottom: Visual Dioramas */}
+          <div className="relative flex h-[50%] w-full items-center justify-center md:h-full md:w-[50%]">
             {content.map((item, index) => {
               const isActive = activeCard === index;
               return (
                 <div
                   key={index}
-                  className="absolute h-[55vh] w-full max-w-[600px] overflow-hidden rounded-2xl border border-white/[0.05] bg-white/[0.01] shadow-2xl backdrop-blur-md"
+                  className="absolute h-full max-h-[300px] w-full max-w-[600px] md:max-h-none md:h-[55vh] overflow-hidden rounded-2xl border border-white/[0.05] bg-white/[0.01] shadow-2xl backdrop-blur-md"
                   style={{
                     opacity: isActive ? 1 : 0,
                     pointerEvents: isActive ? "auto" : "none",
