@@ -60,7 +60,7 @@ export function CTASection() {
             </p>
 
             {/* Button */}
-            <a href="https://forms.gle/1h14yS9C4ctPRU2UA">
+            <a href="https://forms.gle/VneUXxaPYbtovay19">
             <button className="group relative mb-5 inline-flex h-16 items-center justify-center gap-3 overflow-hidden rounded-full bg-white px-14 text-lg font-medium text-black transition-all duration-300 hover:bg-white/90 hover:scale-105 active:scale-95 hover:ring-4 hover:ring-white/20">
               <span className="relative z-10">Join the Community</span>
               <ArrowRight className="h-5 w-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
