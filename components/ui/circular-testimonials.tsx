@@ -231,7 +231,7 @@ export const CircularTestimonials = ({
               </motion.div>
 
               {/* Social Icons */}
-              <motion.div variants={itemVariants} className="mt-10 flex items-center gap-3">
+              <motion.div variants={itemVariants} className="mt-8 flex items-center gap-3">
                 {activeMember.links.linkedin && (
                   <SocialButton icon={<Briefcase className="h-5 w-5" />} href={activeMember.links.linkedin} label="LinkedIn" />
                 )}
@@ -316,7 +316,7 @@ export const CircularTestimonials = ({
         .arrow-buttons {
           display: flex;
           gap: 1rem;
-          padding-top: 3rem;
+          padding-top: 1.5rem;
         }
         .arrow-button {
           width: 3rem;
@@ -338,7 +338,7 @@ export const CircularTestimonials = ({
             height: 28rem;
           }
           .arrow-buttons {
-            padding-top: 4rem;
+            padding-top: 2rem;
           }
         }
       `}</style>
