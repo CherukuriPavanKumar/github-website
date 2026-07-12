@@ -66,17 +66,23 @@ export const BuilderCard = ({ member }: BuilderCardProps) => {
               transition={{ opacity: { duration: 0.2 }, height: { type: "spring", stiffness: 300, damping: 25 }, y: { type: "spring", stiffness: 300, damping: 25 } }}
               className="mb-5 flex flex-col gap-2 overflow-hidden border-t border-white/10 pt-4"
             >
-              <div className="flex items-center justify-between text-xs">
+              <div className="flex items-center justify-between text-[11px]">
                 <span className="font-mono text-white/40">Domain</span>
                 <span className="text-white/80">{member.domain}</span>
               </div>
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-mono text-white/40">Favorite Tech</span>
-                <span className="text-white/80">{member.favoriteTech}</span>
+              <div className="flex items-center justify-between text-[11px]">
+                <span className="font-mono text-white/40">Year</span>
+                <span className="text-white/80">{member.year}</span>
               </div>
-              <div className="flex items-center justify-between text-xs">
-                <span className="font-mono text-white/40">Current Focus</span>
-                <span className="text-white/80">{member.focus}</span>
+              <div className="flex flex-col gap-1.5 text-[11px] mt-1">
+                <span className="font-mono text-white/40">Expertise</span>
+                <div className="flex flex-wrap gap-1">
+                  {member.expertise.map((skill) => (
+                    <span key={skill} className="rounded bg-white/5 border border-white/10 px-1.5 py-0.5 text-white/70">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           )}
