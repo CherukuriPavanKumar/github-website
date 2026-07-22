@@ -25,9 +25,9 @@ export const teamMembers: TeamMember[] = [
     year: "4th Year",
     expertise: ["Community Building", "Strategic Planning", "System Architecture"],
     links: {
-      linkedin: "#",
-      github: "#",
-      email: "#",
+      linkedin: "https://www.linkedin.com/in/ksrichakri/",
+      github: "https://github.com/ksrichakri",
+      email: "mailto:skedaris2@gitam.in",
     },
   },
   {
@@ -39,9 +39,9 @@ export const teamMembers: TeamMember[] = [
     year: "4th Year",
     expertise: ["Product Management", "Hackathons", "Frontend Dev"],
     links: {
-      linkedin: "#",
-      github: "#",
-      email: "#",
+      linkedin: "https://www.linkedin.com/in/mahesh-prayaga-850475240/",
+      github: "https://github.com/mahesh-prayaga",
+      email: "mailto:maheshprayaga09@gmail.com",
     },
   },
   {
@@ -53,23 +53,23 @@ export const teamMembers: TeamMember[] = [
     year: "3rd Year",
     expertise: ["UI/UX Design", "Operations", "Event Coordination"],
     links: {
-      linkedin: "#",
-      github: "#",
-      email: "#",
+      linkedin: "https://www.linkedin.com/in/nvkasturi",
+      github: "https://github.com/Kasturi25n",
+      email: "mailto:nvkasturi4@gmail.com",
     },
   },
   {
     name: "Meghana Mudundi",
     role: "Joint Secretary",
-    image: "/meghana.jpg",
+    image: "/meghana.jpeg",
     domain: "Coordination",
     bio: "Architecting backend systems and driving technical workshops for the community.",
     year: "3rd Year",
     expertise: ["Backend Dev", "Technical Mentorship", "Workshops"],
     links: {
-      linkedin: "#",
-      github: "#",
-      email: "#",
+      linkedin: "https://www.linkedin.com/in/meghanamudundi/",
+      github: "https://github.com/Megghanaa",
+      email: "mailto:mmudundi@student.gitam.edu",
     },
   },
   {
@@ -81,9 +81,9 @@ export const teamMembers: TeamMember[] = [
     year: "3rd Year",
     expertise: ["Logistics", "Operations", "Pipeline Optimization"],
     links: {
-      linkedin: "#",
-      github: "#",
-      email: "#",
+      linkedin: "https://www.linkedin.com/in/chsrajavarma/",
+      github: "https://github.com/chsrajavarma8",
+      email: "mailto:schekuri2@student.gitam.edu",
     },
   },
   {
@@ -96,9 +96,9 @@ export const teamMembers: TeamMember[] = [
     year: "4th Year",
     expertise: ["Full Stack Dev", "Open Source", "Developer Experience"],
     links: {
-      linkedin: "#",
-      github: "#",
-      email: "#",
+      linkedin: "https://www.linkedin.com/in/krishnasrinivas-/",
+      github: "https://github.com/KrishnaSrinivas-24",
+      email: "mailto:krishnasrinivas2409@gmail.com",
     },
   },
 ];
